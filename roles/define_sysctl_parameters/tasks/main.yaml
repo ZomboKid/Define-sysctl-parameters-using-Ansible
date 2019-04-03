@@ -1,0 +1,10 @@
+---
+- name: "Add sysctl {{ component }} parameter"
+  sysctl:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    sysctl_set: yes
+    state: present
+    reload: yes
+    sysctl_file: "/etc/sysctl.d/{{ component }}.conf"
+  with_dict: "{{ sysctl[component] }}"

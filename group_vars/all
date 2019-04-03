@@ -1,0 +1,6 @@
+sysctl:
+  clickhouse:
+    net.ipv4.ip_nonlocal_bind: 1
+  redis:
+    vm.overcommit_memory: 1
+    net.core.somaxconn: 4096

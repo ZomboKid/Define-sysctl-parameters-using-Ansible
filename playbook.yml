@@ -1,0 +1,8 @@
+---
+- hosts: servers
+  gather_facts: no
+  roles:
+    - role: define_sysctl_parameters
+      component: "clickhouse"
+    - role: define_sysctl_parameters
+      component: "redis"
